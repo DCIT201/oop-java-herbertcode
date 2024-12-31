@@ -1,7 +1,4 @@
-import java.util.*;
-
-// Abstraction: Abstract class Vehicle
-abstract class Vehicle {
+public abstract class Vehicle {
     private final String vehicleId;
     private final String model;
     private final double baseRentalRate;
@@ -9,7 +6,7 @@ abstract class Vehicle {
 
     public Vehicle(String vehicleId, String model, double baseRentalRate) {
         if (vehicleId == null || vehicleId.isEmpty() || model == null || model.isEmpty() || baseRentalRate <= 0) {
-            throw new IllegalArgumentException("Invalid vehicle details provided.");
+            throw new IllegalArgumentException("Invalid vehicle details.");
         }
         this.vehicleId = vehicleId;
         this.model = model;
@@ -17,7 +14,7 @@ abstract class Vehicle {
         this.isAvailable = true;
     }
 
-    // Encapsulation: Getters and setters
+    // Getters and setters
     public String getVehicleId() {
         return vehicleId;
     }
@@ -38,7 +35,7 @@ abstract class Vehicle {
         this.isAvailable = available;
     }
 
-    // Abstract methods for rental calculation and availability
+    // Abstract methods for rental cost and availability
     public abstract double calculateRentalCost(int days);
     public abstract boolean isAvailableForRental();
 
